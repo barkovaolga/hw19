@@ -1,0 +1,214 @@
+@use "mixins" as m;
+@use "vars" as v;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: v.$main-font-size;
+  font-family: v.$font-text;
+  color: #565656;
+}
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    padding: 0 34px;
+  }
+  @media screen and (max-width: 320px) {
+    padding: 0 10px;
+  }
+}
+.title {
+  @include m.text-title(48px);
+  color: black;
+  margin-bottom: 70px;
+}
+.subtitle {
+  @include m.text(16px);
+  margin: 38px 0;
+}
+.section {
+  margin-bottom: 90px;
+  &_title {
+    @include m.text-title(28px);
+    color: black;
+    letter-spacing: 10%;
+    margin-bottom: 50px;
+  }
+  &_text {
+    @include m.text(19px);
+    letter-spacing: 5%;
+    color: #565656;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+}
+.overview {
+  max-width: 570px;
+}
+.footer {
+  background: #f4f4f4;
+  &_title {
+    @include m.text-title(48px);
+    margin-bottom: 50px;
+    margin-top: 70px;
+  }
+}
+
+.posts {
+  display: flex;
+  gap: 30px;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+  @media screen and (max-width: 576px) {
+    flex-wrap: wrap;
+  }
+}
+.post {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 576px) {
+    flex-wrap: wrap;
+  }
+  &__category {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    @media screen and (max-width: 768px) {
+      padding-top: 0px;
+    }
+    &_name {
+      font-family: "lato";
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 166%;
+      letter-spacing: 10%;
+      color: #7b7b7b;
+    }
+    &_date {
+      font-family: "lato";
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 166%;
+      letter-spacing: 10%;
+      color: #7b7b7b;
+    }
+  }
+  &__title {
+    font-family: "Red Hat Display";
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 166%;
+    letter-spacing: 10%;
+    color: #000;
+    padding-bottom: 20px;
+  }
+  &__text {
+    font-family: "lato";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 166%;
+    letter-spacing: 5%;
+    color: #565656;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    margin-bottom: 40px;
+  }
+}
+.tel,
+.email {
+  font-family: "lato";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 10%;
+  color: #7b7b7b;
+}
+.footer__socials {
+  display: flex;
+  gap: 23px;
+}
+.footer__social {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #565656;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #565656;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #565656;
+    color: #fff;
+  }
+  & img {
+    filter: brightness(0) invert(40%);
+  }
+  &:hover img {
+    filter: brightness(0) invert(1);
+  }
+}
+.text_final {
+  font-family: "lato";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 10%;
+  color: #7b7b7b;
+  text-align: center;
+  margin: 30px 0;
+}
+.media_screen {
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+  &_2 {
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &_img {
+    max-width: 570px;
+    max-height: 260px;
+    & img {
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 340px;
+      max-height: 160px;
+    }
+    @media screen and (max-width: 576px) {
+      max-width: 300px;
+      max-height: 150px;
+    }
+  }
+}
